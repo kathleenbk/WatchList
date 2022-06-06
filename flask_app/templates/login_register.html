@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Login and Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login-register.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@900&family=Yantramanav:wght@300&display=swap" rel="stylesheet">
+
+    
+</head>
+<body>
+    
+    <div class="kheader">
+        <div class="kheader-elements">
+            <img src="https://docs.google.com/drawings/d/e/2PACX-1vS2hnxksb4g9ixkMaaiCU64Yi-D3pJ1dCAFiTlvFuYQ-lFboMIdiRpaVQ8p9nuqH42KlTKKYlwMkXUN/pub?w=960&h=720" alt="fail" style="height:60px">
+            <h2 class="logo">Watch<span class="logo2">List</span></h2>
+        </div>
+    </div>
+    <div class="maincontainer">
+    <div class="login-register">
+        <div class="login">
+            <!-- LOGIN USER -->
+            <h1>Login</h1>
+
+            <!-- Get error messages -->
+            {% with messages = get_flashed_messages(category_filter=['login']) %}     <!-- declare a variable called messages -->
+                {% if messages %}                            <!-- check if there are any messages -->
+                    <h2   h2 class="text-danger">ERROR</h2>
+                        {% for message in messages %}            <!-- loop through the messages -->
+                            <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                        {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <!-- Login Form -->
+            <form action="/login" method="POST">
+                <div class="form-group">
+                        <input class="form-control" type="text" name="email" placeholder="Email Address">
+                </div>
+                <div class="form-group">
+                        <input class="form-control" type="password" name="password" placeholder="Password">
+                </div>
+                <input class="button" type="submit" value="Login">
+            </form>
+        </div>
+        <div class="register">
+            <!-- REGISTER USER -->
+            <form class="form" action="/register" method="POST">
+                <h1>Register</h1>
+
+                <!-- Get error messages -->
+                {% with messages = get_flashed_messages(category_filter=['register']) %}     <!-- declare a variable called messages -->
+                    {% if messages %}                            <!-- check if there are any messages -->
+                        <h4 class="text-danger">ERROR - User not created</h4>
+                        {% for message in messages %}            <!-- loop through the messages -->
+                            <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                
+                <!-- Registration Form -->
+                <div class="form-group">
+                        <input class="form-control" type="text" name="first_name" placeholder="First Name">
+                </div>
+                <div class="form-group">
+                        <input class="form-control" type="text" name="last_name" placeholder="Last Name">
+                </div>
+                <div class="form-group">
+                        <input class="form-control" type="email" name="email" placeholder="Email Address">
+                </div>
+                <div class="form-group">
+                        <input class="form-control" type="password" name="password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                        <input class="form-control" type="password" name="confirm_password" placeholder="Confirm Password">
+                </div>
+                <input class="button" type="submit" value="Register">
+            </form>
+        </div>
+
+
+    </div>
+    </div>  
+
+</body>
+
+</html>

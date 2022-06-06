@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Watchlist</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@900&family=Yantramanav:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <div class="header-elements">
+            <img src="https://docs.google.com/drawings/d/e/2PACX-1vS2hnxksb4g9ixkMaaiCU64Yi-D3pJ1dCAFiTlvFuYQ-lFboMIdiRpaVQ8p9nuqH42KlTKKYlwMkXUN/pub?w=960&h=720" alt="fail" style="height:60px">
+            <h2 class="logo">Watch<span class="logo2">List</span></h2>
+        </div>
+    </div>
+    <form action="/watchlists/create" method="POST">
+        <input type="hidden" name="id" value={{user_id}}>
+        <label for="first_name">List Name:</label>
+                    <input class="form-control" type="text" name="name">
+        <input class="btn btn-success create" type="submit" value="Create New List">
+    </form>
+</body>
+</html>

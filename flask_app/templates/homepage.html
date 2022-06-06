@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@900&family=Yantramanav:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <div class="header-elements">
+            <img src="https://docs.google.com/drawings/d/e/2PACX-1vS2hnxksb4g9ixkMaaiCU64Yi-D3pJ1dCAFiTlvFuYQ-lFboMIdiRpaVQ8p9nuqH42KlTKKYlwMkXUN/pub?w=960&h=720" alt="fail" style="height:60px">
+            <h2 class="logo">Watch<span class="logo2">List</span></h2>
+        </div>
+    </div>
+    <div class="centered">
+        <h1 class="bigtext">Let's watch something.</h1>
+        <form action="/login_register">
+            <input class="button" type="submit" value="Login / Register">
+        </form>
+    </div>
+</body>
+</html>

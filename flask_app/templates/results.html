@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+</head>
+<body>
+    <div class="header d-flex justify-content-between">
+        <h1 class="text-center title">WatchList</h1>
+        <div >
+            <h3 class="welcome">Welcome, {{user.first_name}}</h3>
+            
+            <!-- Logout -->
+            <form action="/logout">
+                <input class="btn btn-danger" type="submit" value="Logout">
+            </form>
+        </div>
+    </div>
+    <form class="search" action="/browse" method="GET">
+        <label for="term">Title</label>
+        <input type="text" name="term">
+        <input class="btn btn-purple button" type="submit" value="Search">
+
+    </form>
+
+    
+    <div class="line"></div>
+    {% for i in range(length) %}
+    <div class="response">
+        
+        <div class="movie">
+            <img src="{{response[i].picture}}" alt="Image failed" style="height:200px;" class="pic">
+            
+            
+                
+            
+        </div>
+        <h1>{{response[i].name}}</h1>
+        
+        <h2>Available on:</h2> 
+        <div class="locations">
+        {% for j in range(response[i].locations|length) %}
+            <p>{{response[i].locations[j].display_name}}</p>
+        {% endfor %}
+        </div>
+        
+        
+        <form action="/watchlist/add" method="POST">
+            <label for="select">Select WatchList:</label>
+            <select name="select">
+                <option>Favorites</option>
+            </select>
+            <input class="btn btn-success" type="submit" value="Add to WatchList">
+        </form>
+        
+    </div>
+    {% endfor %}
+</body>
+</html>

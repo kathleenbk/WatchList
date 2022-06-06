@@ -1,0 +1,60 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background-image: url(https://t4.ftcdn.net/jpg/02/62/03/65/360_F_262036587_0LSZgmFs9YXDQuR0J7w1rJF1Te7qXpHN.jpg);
+}
+
+.header {
+    padding: 5px;
+}
+.header-elements {
+    font-family: 'Yantramanav', sans-serif;
+    font-weight:bolder;
+    font-size: 22pt;
+    display: flex;
+    align-items: center;
+}
+.logo {
+    margin-top: 15px;
+    color: white;
+}
+.logo2{
+    color: #5E5DF0;
+}
+
+.bigtext  {
+    text-align: center;
+    font-size: 48pt;
+    font-family: 'Yantramanav', sans-serif;
+    color: white;
+}
+.centered {
+    padding:250px 0;
+    text-align: center;
+}
+
+.button {
+    margin-top: 15px;
+    background: #5E5DF0;
+    border-radius: 999px;
+    box-shadow: #5E5DF0 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: 'Yantramanav', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    word-break: break-word;
+    border: 0;
+}
