@@ -106,7 +106,7 @@ def browse():
 
         headers = {
             "X-RapidAPI-Host": "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com",
-            "X-RapidAPI-Key": "3269c92d4dmshf47a0752a75c60bp15adc2jsn4c415fa71af2"
+            "X-RapidAPI-Key": var
         }
 
         response = requests.request("GET", url, headers=headers, params=querystring)
